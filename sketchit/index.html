@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SketchIt</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<!--
+		Save image doesn't work on iOS when loading page as app
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		-->
+		<link rel="apple-touch-icon-precomposed" href="img/SketchIt_Icon-114.png"/>
+		<link rel="icon" type="image/png" href="img/SketchIt_Icon-32.png" />
+
+		<!-- jQuery Mobile -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+
+		<!--
+		pretopia modules:
+		- net.pretopia.utils
+		- net.pretopia.DEVICe
+		- net.pretopia.Sketchpad
+		- net.pretopia.ColorPicker
+
+		Available from
+		http://code.google.com/p/pretopia/source/browse/trunk/js
+		-->
+		<script type="text/javascript" src="SketchIt-min.js"></script>
+
+		<style media="screen" type="text/css">
+			body {
+				-webkit-user-select: none;
+				-webkit-touch-callout: none;
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+
+			#Sketchpad {
+				background: #ffffff;
+			}
+			
+			.sketchpad {
+				margin: 0px;
+				background: #ffffff;
+			}
+			
+			.colorpicker {
+				border: 1px solid #000000;
+				cursor: crosshair;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- Sketchpad page --> 
+		<div data-role="page" id="Sketchpad">
+			<div id="SketchpadContent" data-role="content">
+				<div id="SketchpadDiv"></div>
+			</div><!-- /content --> 
+	
+			 <div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#pencil" data-transition="flip">Pencil</a>
+						</li>
+						<li id="saveSketch">
+							<a href="javascript:exportSketch();">Save</a>
+						</li>
+						<li>
+							<a href="javascript:clearSketch();">Clear</a>
+						</li>
+						<li>
+							<a href="#about" data-transition="flip">About</a>
+						</li>
+					</ul>
+				</div>
+			</div><!-- /footer --> 
+		</div><!-- /page --> 
+
+	
+		<!-- Pencil settings --> 
+		<div data-role="page" id="pencil"> 
+			<div data-role="header"> 
+				<h1>Pencil</h1> 
+			</div><!-- /header --> 
+ 
+			<div data-role="content">
+				<div style="margin: 0px auto; text-align: center;">
+					<div style="height: 22px; margin-bottom: 8px;">
+						<div id="pickedColor" style="margin: 0px auto; width: 260px; height: 3px; background: #000000;">&nbsp;</div> 
+					</div>
+				
+					<div style="position: relative; margin: 0px auto; width: 260px; height: 100px;">
+						<div id="BlackDiv" class="colorpicker" style="position: absolute; width: 20px; height: 75px; left: 0px; background: #000000;"></div>
+						<div id="WhiteDiv" class="colorpicker" style="position: absolute; width: 20px; height: 75px; left: 30px; background: #ffffff;"></div>
+						<div id="ColorPickerDiv" style="position: absolute; left: 60px;"></div>
+					</div>
+
+					<div style="margin-top: 20px;">
+						Thickness:&nbsp;<input id="diameter" type="range" min="1" max="20" value="3" onchange="changePointerDiameter();"/> 
+					</div>
+				</div>
+			</div><!-- /content --> 
+		</div><!-- /page --> 
+		
+		
+		<!-- About page --> 
+		<div data-role="page" id="about"> 
+			<div data-role="header" data-position="fixed"> 
+				<h1>About SketchIt</h1> 
+			</div><!-- /header --> 
+ 
+			<div data-role="content">
+				<img src="img/SketchIt-220.png" alt="SketchIt" title="SketchIt" />
+				
+				<p>
+					SketchIt is a mobile, platform independent doodling app. It's just a very simple interface to make some doodles, and save them as images (when your device supports it).
+				</p>
+
+				<p>
+					The core of SketchIt consists of <strong>Sketchpad.js</strong> and <strong>ColorPicker.js</strong>, both available through <a href="http://code.google.com/p/pretopia/source/browse/trunk/js" rel="external" target="_blank">Google Code</a>. The user interface uses the <a href="http://jquerymobile.com" rel="external" target="_blank">jQuery Mobile</a> framework.
+				</p>
+
+				<div style="font-size: 12px;">
+					&copy; 2011, <strong>Thijs van As</strong> (<a href="http://twitter.com/tvanas" rel="external" target="_blank">@tvanas</a>), <a href="http://pretopia.net" rel="external" target="_blank">pretopia.net</a>.
+				</div>
+			</div><!-- /content --> 
+		</div><!-- /page --> 
+		
+ 
+		<script type="text/javascript">
+			// SketchIt environment
+			var SketchpadInstance = null;
+			var ColorPickerInstance = null;
+			var myDevice = net.pretopia.DEVICE;
+			
+			function chooseColor(color) {
+				$('#pickedColor').css('background', color);
+				SketchpadInstance.setPointerColor(color);
+			}
+
+			function changePointerDiameter() {
+				$('#pickedColor').height($('#diameter').val() + 'px');
+				SketchpadInstance.setPointerDiameter($('#diameter').val());
+			}
+
+			function exportSketch() {
+				var newWindow = window.open('');
+				var newDocument = newWindow.document;
+
+				newDocument.write('<html><head><title></title></head><body>');
+				newDocument.write('<div style="margin-bottom: 10px;">Copy/save the image below:</div>');
+				newDocument.write('<img src="' + SketchpadInstance.exportImage() + '" style="border: 3px dashed #aaaaaa;"/>');
+				newDocument.write('</body></html>');
+			}
+
+			function clearSketch() {
+				SketchpadInstance.clear();
+				SketchpadInstance.setPointerColor(ColorPickerInstance.getPickedColor());
+			}
+			
+			if (myDevice.OS.name == 'Android' && myDevice.OS.version.charAt(0) < 3) { 
+				// Canvas method toDataURL is not supported on older Android versions yet 
+				$('#saveSketch').remove();
+			}
+
+			var SketchpadParams = {
+				height: document.documentElement.clientHeight + ((myDevice.device.family === 'iPad') ? -120 : ((myDevice.OS.name === 'iOS') ? -104 : -40)),
+				width: document.documentElement.clientWidth
+			};
+			SketchpadInstance = new net.pretopia.Sketchpad('SketchpadDiv', SketchpadParams);
+	
+			var ColorPickerParams = {
+				width: 200,
+				height: 75,	
+				chooseColor: chooseColor
+			};
+			ColorPickerInstance = new net.pretopia.ColorPicker('ColorPickerDiv', ColorPickerParams);
+
+			$('#BlackDiv').bind('click', function() {
+				chooseColor('#000000');
+			});
+				
+			$('#WhiteDiv').bind('click', function() {
+				chooseColor('#ffffff');
+			});
+			
+			$('#SketchpadContent').css('padding', '0px');
+
+			// render Sketchpad and ColorPicker
+			SketchpadInstance.init();
+			ColorPickerInstance.render();
+		</script>
+		
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-19023399-1']);
+		  _gaq.push(['_trackPageview']);
+	
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+	</body>
+</html>

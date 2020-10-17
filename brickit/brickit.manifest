@@ -1,0 +1,34 @@
+CACHE MANIFEST
+
+# 
+# download these files
+# 
+# updated: 1060119@23:53
+
+index.html
+../js/DEVICE.js
+BrickIt-min.js
+img/leftThumb.png
+img/rightThumb.png
+img/BrickItIcon.png
+img/BrickItSplash.png
+img/BrickItLogo.png
+img/BrickItLogoSmall.png
+img/favicon.png
+
+# no cache: load audio files from the network
+NETWORK:
+audio/finishLevel.mp3
+audio/gameOver.mp3
+audio/hitBrick.mp3
+audio/hitPad.mp3
+audio/loseLive.mp3
+audio/startGame.mp3
+audio/winner.mp3
+audio/finishLevel.ogg
+audio/gameOver.ogg
+audio/hitBrick.ogg
+audio/hitPad.ogg
+audio/loseLive.ogg
+audio/startGame.ogg
+audio/winner.ogg
