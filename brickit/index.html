@@ -310,20 +310,24 @@
 			               audio_gameOver: 'gameOver',
 			               audio_winner: 'winner',
 			             };
-			
-			var params_mobile = {
+
+
+			// hack: the game is in portrait mode. so let's get the portrait width of the device
+			var portraitWidth = (screen.availWidth > screen.availHeight) ? screen.availWidth : screen.availHeight;
+      var portraitHeight = (screen.availHeight < screen.availWidth) ? screen.availHeight : screen.availWidth;
+      var params_mobile = {
 			               attachKeyboard: false,
 			               attachTouchControls: true,
 			               attachTouchSwipe: false,
 			               enableSoundFX: false,
-			               gameAreaWidth: screen.availWidth,
-			               gameAreaHeight: screen.availHeight,
-			               brickWidth: Math.floor(screen.availWidth/18),
-			               brickHeight: Math.floor(screen.availHeight/22),
-			               padWidth: Math.floor(screen.availWidth/7),
-			               padHeight: Math.floor(screen.availHeight/30),
+			               gameAreaWidth: portraitWidth,
+			               gameAreaHeight: portraitHeight,
+			               brickWidth: Math.floor(portraitWidth/18),
+			               brickHeight: Math.floor(portraitHeight/22),
+			               padWidth: Math.floor(portraitWidth/7),
+			               padHeight: Math.floor(portraitHeight/30),
 			               padBottomOffset: 36,
-			               ballRadius: Math.floor(screen.availWidth/96),
+			               ballRadius: Math.floor(portraitWidth/96),
 			               defaultBallSpeed: 3,
 			               padSpeed: 10,
 			               coreLoopInterval: 16
@@ -334,14 +338,14 @@
 			               attachTouchControls: true,
 			               attachTouchSwipe: false,
 			               enableSoundFX: false,
-			               gameAreaWidth: screen.availWidth,
-			               gameAreaHeight: screen.availHeight,
-			               brickWidth: Math.floor(screen.availWidth/18),
-			               brickHeight: Math.floor(screen.availHeight/22),
-			               padWidth: Math.floor(screen.availWidth/7),
-			               padHeight: Math.floor(screen.availHeight/30),
+			               gameAreaWidth: portraitWidth,
+			               gameAreaHeight: portraitHeight,
+			               brickWidth: Math.floor(portraitWidth/18),
+			               brickHeight: Math.floor(portraitHeight/22),
+			               padWidth: Math.floor(portraitWidth/7),
+			               padHeight: Math.floor(portraitHeight/30),
 			               padBottomOffset: 35,
-			               ballRadius: Math.floor(screen.availWidth/110),
+			               ballRadius: Math.floor(portraitWidth/110),
 			               defaultBallSpeed: 3,
 			               padSpeed: 10,
 			               coreLoopInterval: 16
@@ -397,27 +401,13 @@
 				}
 				else if (!navigator.standalone || navigator.userAgent.match(/Android/i)) {
 					// iPhone or iPod Touch - BrickIt is not installed yet
-					/*document.body.style.padding = '0px';
-					document.body.style.margin = '0px';
-					document.getElementById('BrickItDiv').style.display = 'none';
-					document.getElementById('installBrickIt').style.display = '';
-					/**/
 					document.body.style.padding = '0px';
 					document.body.style.margin = '0px';
 					document.getElementById('BrickItDiv').style.margin = '0px';
-					document.getElementById('BrickItDiv').style.width = '480px';
-					document.getElementById('BrickItDiv').style.height = '270px';
 					document.getElementById('BrickItDiv').style.border = '0px solid #000000';
 					document.getElementById('BrickItDiv').style.display = '';
 					window.onorientationchange = checkOrientation_nonApp;
 					checkOrientation_nonApp();
-
-					if (window.devicePixelRatio == 2) {
-						// iPhone 4
-						params_mobile_nonApp.defaultBallSpeed = 3;
-						params_mobile_nonApp.padSpeed = 8;
-						params_mobile_nonApp.coreLoopInterval = 40;
-					}
 
 					BrickItInstance.main(params_mobile_nonApp);
 					/**/
@@ -433,13 +423,6 @@
 					document.getElementById('BrickItDiv').style.display = '';
 					window.onorientationchange = checkOrientation;
 					checkOrientation();
-					
-					if (window.devicePixelRatio == 2) {
-						// iPhone 4
-						params_mobile.defaultBallSpeed = 3;
-						params_mobile.padSpeed = 8;
-						params_mobile.coreLoopInterval = 40;
-					}
 					
 					BrickItInstance.main(params_mobile);
 				}
