@@ -1,15 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
-<!--
-
-- BrickIt-min.js
-- Analytics
-- manifest
-
--->
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" manifest="brickit.manifest">
+<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -87,7 +78,6 @@
 							switch (this.OS.name) {
 							case 'iOS':
 								this.isMobile = true;
-								this.OS.version = this._userAgent.match(/OS\s(\S+)/)[1].replace(/_/g, '.');
 								if (window.devicePixelRatio == 2 && 
 									(this.device.family == 'iPhone' || this.device.family == 'iPod')) {
 										// retina display iPhone/iPod
@@ -96,8 +86,6 @@
 									break;
 								case 'Android':
 									this.isMobile = true;
-									this.OS.version = this._userAgent.match(/Android\s(\S+);/)[1];
-									this.device.family = this._userAgent.match(/(\S+\s?\S*)\sBuild/)[1];
 									break;
 								default:
 									break;
@@ -328,34 +316,34 @@
 			               attachTouchControls: true,
 			               attachTouchSwipe: false,
 			               enableSoundFX: false,
-			               gameAreaWidth: 480,
-			               gameAreaHeight: 300,
-			               brickWidth: 28,
-			               brickHeight: 13,
-			               padWidth: 65,
-			               padHeight: 10,
+			               gameAreaWidth: screen.availWidth,
+			               gameAreaHeight: screen.availHeight,
+			               brickWidth: Math.floor(screen.availWidth/18),
+			               brickHeight: Math.floor(screen.availHeight/22),
+			               padWidth: Math.floor(screen.availWidth/7),
+			               padHeight: Math.floor(screen.availHeight/30),
 			               padBottomOffset: 36,
-			               ballRadius: 5,
-			               defaultBallSpeed: 1,
-			               padSpeed: 6,
+			               ballRadius: Math.floor(screen.availWidth/96),
+			               defaultBallSpeed: 3,
+			               padSpeed: 10,
 			               coreLoopInterval: 16
 			             };
 			
-			var params_mobile_nonApp = {
+      var params_mobile_nonApp = {
 			               attachKeyboard: false,
 			               attachTouchControls: true,
 			               attachTouchSwipe: false,
 			               enableSoundFX: false,
-			               gameAreaWidth: 480,
-			               gameAreaHeight: 270,
-			               brickWidth: 27,
-			               brickHeight: 11,
-			               padWidth: 65,
-			               padHeight: 10,
+			               gameAreaWidth: screen.availWidth,
+			               gameAreaHeight: screen.availHeight,
+			               brickWidth: Math.floor(screen.availWidth/18),
+			               brickHeight: Math.floor(screen.availHeight/22),
+			               padWidth: Math.floor(screen.availWidth/7),
+			               padHeight: Math.floor(screen.availHeight/30),
 			               padBottomOffset: 35,
-			               ballRadius: 4,
-			               defaultBallSpeed: 1,
-			               padSpeed: 6,
+			               ballRadius: Math.floor(screen.availWidth/110),
+			               defaultBallSpeed: 3,
+			               padSpeed: 10,
 			               coreLoopInterval: 16
 			             };
 	
@@ -407,28 +395,13 @@
 					checkOrientationPad();
 					BrickItInstance.main(params_ipad);
 				}
-				else if (navigator.userAgent.match(/Android/i)) {
-					// Android
-					document.body.style.padding = '0px';
-					document.body.style.margin = '0px';
-					document.getElementById('BrickItDiv').style.width = '480px';
-					document.getElementById('BrickItDiv').style.height = '300px';
-					document.getElementById('BrickItDiv').style.display = '';
-					window.onorientationchange = checkOrientation;
-					params_mobile.defaultBallSpeed = 2;
-					params_mobile.padSpeed = 8;
-					params_mobile.coreLoopInterval = 40;
-					checkOrientation();
-					BrickItInstance.main(params_mobile);
-					window.scrollTo(0, window.innerHeight);
-				}
-				else if (!navigator.standalone) {
+				else if (!navigator.standalone || navigator.userAgent.match(/Android/i)) {
 					// iPhone or iPod Touch - BrickIt is not installed yet
-					document.body.style.padding = '0px';
+					/*document.body.style.padding = '0px';
 					document.body.style.margin = '0px';
 					document.getElementById('BrickItDiv').style.display = 'none';
 					document.getElementById('installBrickIt').style.display = '';
-					/*
+					/**/
 					document.body.style.padding = '0px';
 					document.body.style.margin = '0px';
 					document.getElementById('BrickItDiv').style.margin = '0px';
@@ -447,7 +420,7 @@
 					}
 
 					BrickItInstance.main(params_mobile_nonApp);
-					*/
+					/**/
 				}
 				else {
 					// iPhone or iPod Touch - installed (load the game now)

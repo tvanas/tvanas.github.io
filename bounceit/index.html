@@ -1,14 +1,6 @@
 <!DOCTYPE HTML>
 
-<!--
-
-- BounceIt-min.js
-- Analytics
-- manifest
-
--->
-
-<html manifest="bounceit.manifest">
+<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -225,25 +217,7 @@
 
 					params.attachKeyboard = Boolean(false);
 					window.onorientationchange = checkOrientation;
-					                    
 					switch (myBrowser.device.family) {
-						case 'iPhone':
-						case 'iPod':
-							if (myBrowser.isAppMode) {
-								BounceItDiv.style.width = '320px'; //320
-								params.gameAreaWidth = new Number(320);
-								BounceItDiv.style.height = '460px'; // 460
-								params.gameAreaHeight = new Number(460);
-							}
-							
-                            /*
-							if (myBrowser.device.hasRetina) {
-								params.coreLoopInterval = new Number(33);
-								params.stepDivider = new Number(30);
-								params.lrSpeed = new Number(10);
-							}
-                            */
-							break;
 						case 'iPad':
 							BounceItDiv.style.border = '1px solid #555555';
 							BounceItDiv.style.width = '500px'; //400
@@ -253,20 +227,17 @@
 							params.gameAreaHeight = new Number(650);
 							break;
 						default:
-							//android
-							BounceItDiv.style.width = screen.availWidth + 'px';
+							BounceItDiv.style.width = (screen.availWidth) + 'px';
 							params.gameAreaWidth = new Number(screen.availWidth);
-							if (myBrowser.isAppMode) {
+							
+              if (myBrowser.isAppMode) {
 								BounceItDiv.style.height = (screen.availHeight - 30)+ 'px';
 								params.gameAreaHeight = new Number(screen.availHeight - 30);
 							}
 							else {
-								BounceItDiv.style.height = (screen.availHeight - 130)+ 'px'; //185
+								BounceItDiv.style.height = (screen.availHeight - 130)+ 'px';
 								params.gameAreaHeight = new Number(screen.availHeight - 130);
 							}
-							//params.coreLoopInterval = new Number(33);
-							//params.stepDivider = new Number(30);
-							//params.lrSpeed = new Number(10);
 							break;
 					}
 				}
