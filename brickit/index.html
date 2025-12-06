@@ -315,15 +315,16 @@
 			// hack: the game is in portrait mode. so let's get the portrait width of the device
 			var portraitWidth = (screen.availWidth > screen.availHeight) ? screen.availWidth : screen.availHeight;
       var portraitHeight = (screen.availHeight < screen.availWidth) ? screen.availHeight : screen.availWidth;
+
       var params_mobile = {
 			               attachKeyboard: false,
 			               attachTouchControls: true,
 			               attachTouchSwipe: false,
 			               enableSoundFX: false,
-			               gameAreaWidth: portraitWidth,
-			               gameAreaHeight: portraitHeight,
-			               brickWidth: Math.floor(portraitWidth/18),
-			               brickHeight: Math.floor(portraitHeight/22),
+			               gameAreaWidth: portraitWidth - 40,
+			               gameAreaHeight: portraitHeight - 40,
+			               brickWidth: Math.floor(portraitWidth/20),
+			               brickHeight: Math.floor(portraitHeight/25),
 			               padWidth: Math.floor(portraitWidth/7),
 			               padHeight: Math.floor(portraitHeight/30),
 			               padBottomOffset: 36,
@@ -338,10 +339,10 @@
 			               attachTouchControls: true,
 			               attachTouchSwipe: false,
 			               enableSoundFX: false,
-			               gameAreaWidth: portraitWidth,
-			               gameAreaHeight: portraitHeight,
-			               brickWidth: Math.floor(portraitWidth/18),
-			               brickHeight: Math.floor(portraitHeight/22),
+			               gameAreaWidth: portraitWidth - 40,
+			               gameAreaHeight: portraitHeight - 40,
+			               brickWidth: Math.floor(portraitWidth/20),
+			               brickHeight: Math.floor(portraitHeight/25),
 			               padWidth: Math.floor(portraitWidth/7),
 			               padHeight: Math.floor(portraitHeight/30),
 			               padBottomOffset: 35,
