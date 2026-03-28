@@ -44,11 +44,11 @@ Before moving into product, I spent a lot of time in the weeds of VHDL and recon
 
 A collection of HTML5 games I built around 2010, when the canvas element was brand new. They still play great on modern browsers. The source code for all of them is on [GitHub](https://github.com/tvanas/html5-games).
 
-- **[BrickIt](/brickit) (2010)** · Arkanoid-style brick breaker, took 2nd prize at HTML5Contest.com
-- **[BounceIt](/bounceit) (2011)** · Endless vertical jumper
-- **[FloodIt](/floodit) (2010)** · Color flood puzzle
-- **[SweepIt](/sweepit) (2010)** · Minimalist Minesweeper
-- **[SnakeIt](/snakeit) (2017)** · A tribute to the Nokia classic, built during a transatlantic flight
+- **[BrickIt](/brickit/) (2010)** · Arkanoid-style brick breaker, took 2nd prize at HTML5Contest.com
+- **[BounceIt](/bounceit/) (2011)** · Endless vertical jumper
+- **[FloodIt](/floodit/) (2010)** · Color flood puzzle
+- **[SweepIt](/sweepit/) (2010)** · Minimalist Minesweeper
+- **[SnakeIt](/snakeit/) (2017)** · A tribute to the Nokia classic, built during a transatlantic flight
 
 ## Misc
 
