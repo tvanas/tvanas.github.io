@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="{{ .Site.Title }}">
+        <meta property="og:description" content="{{ .Site.Params.description }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ .Permalink }}">
+        <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+        <meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="canonical" href="{{ .Permalink }}">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+        {{ if .IsHome }}
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Thijs van As",
+            "url": "https://tvanas.nl",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Relay.app",
+                "url": "https://relay.app"
+            },
+            "sameAs": [
+                "https://github.com/tvanas",
+                "https://www.linkedin.com/in/tvanas/",
+                "https://x.com/tvanas",
+                "https://bsky.app/profile/tvanas.nl"
+            ]
+        }
+        </script>
+        {{ end }}
+      </head>
+    <body>
+        <div class="container">
+            {{ block "main" . }}{{ end }}
+            
+            <footer class="site-footer">
+                &copy; 2005-<span id="current-year">{{ now.Year }}</span> · <a href="https://github.com/tvanas">GitHub</a> · <a href="https://www.linkedin.com/in/tvanas/">LinkedIn</a>
+            </footer>
+
+            <script>
+              document.getElementById("current-year").textContent = new Date().getFullYear();
+            </script>
+        </div>
+        <script data-goatcounter="https://tvanas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    </body>
+</html>

@@ -1,2 +1,9 @@
+# Hugo build output
+/public/
+.hugo_build.lock
+
+# Hugo cache
+/resources/_gen/
+
 .DS_Store
-*.swp
+Thumbs.db

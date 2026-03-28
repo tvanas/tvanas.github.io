@@ -1,0 +1,42 @@
+# Thijs van As
+
+> Personal website of Thijs van As — product builder, currently at Relay.app.
+
+This is the personal website of Thijs van As at https://tvanas.nl (previously hosted at pretopia.net).
+
+## About
+
+Thijs van As is a product builder currently working at Relay.app, making AI workflows simple and accessible. Previously, he built products at Google (Gmail, Google Flights, Google Maps) and led product for Booking.com's mobile app.
+
+## Shipped products
+
+- Gmail Add-ons (2016): Cross-platform framework for third-party apps inside Gmail — https://workspace.google.com/blog/developers-practitioners/bring-power-of-your-apps-into-gmail_9
+- Inbox by Gmail: Smart Bundles (2015): Grouped related emails into Trip, Newsletter, and Event experiences — https://gmail.googleblog.com/2015/06/trip-bundles-in-inbox-by-gmail.html
+- Gmail Attachments (2013): The attachment and viewer experience still used in Gmail today — https://blog.google/products-and-platforms/products/gmail/attachments-in-gmail-now-with-power-of/
+- Google Flights: Price Insights (2018): ML-based "low/typical/high" pricing UI — https://edition.cnn.com/travel/article/thanksgiving-2018-flights/index.html
+
+## FPGA projects
+
+- ρ-VEX (2008): Open source extensible VLIW processor, designed for MSc thesis — https://github.com/tvanas/r-vex · thesis: https://tvanas.nl/files/thesis_tvanas.pdf · paper: https://tvanas.nl/files/r-vex_icfpt08.pdf
+- arkanoid-vhdl (2007): Arkanoid implemented entirely in hardware (VHDL) — https://github.com/tvanas/arkanoid-vhdl
+- uart-vhdl (2008): Minimal RS232 communication controller — https://github.com/tvanas/uart-vhdl
+- MIDI synthesizer (2007): Monophonic MIDI synthesizer for digital audio synthesis
+
+## HTML5 games
+
+Built around 2010 when the canvas element was new. All playable at:
+
+- BrickIt: https://tvanas.nl/brickit — Arkanoid-style brick breaker
+- BounceIt: https://tvanas.nl/bounceit — Endless vertical jumper
+- FloodIt: https://tvanas.nl/floodit — Color flood puzzle
+- SweepIt: https://tvanas.nl/sweepit — Minimalist Minesweeper
+- SnakeIt: https://tvanas.nl/snakeit — Nokia-style snake game
+
+Source code: https://github.com/tvanas/html5-games
+
+## Links
+
+- GitHub: https://github.com/tvanas
+- LinkedIn: https://www.linkedin.com/in/tvanas/
+- X/Twitter: https://x.com/tvanas
+- Bluesky: https://bsky.app/profile/tvanas.nl

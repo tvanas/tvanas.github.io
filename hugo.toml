@@ -1,0 +1,9 @@
+baseURL = 'https://tvanas.nl/'
+languageCode = 'en-us'
+title = 'Thijs van As'
+enableRobotsTXT = true
+
+[taxonomies]
+
+[params]
+description = "Personal site of Thijs van As. Product work at Relay.app, Google, and Booking.com, plus FPGA projects, HTML5 games, and other things made for fun."
