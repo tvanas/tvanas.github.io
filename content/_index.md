@@ -12,6 +12,9 @@ Below are some of my favorite things I've built over the years, professionally a
 
 ## Shipped
 
+- **Google Flights: Price Insights (2018)** · Introduced the ML-based "low/typical/high" pricing UI to help users answer a simple question: "Is this a reasonable price?". This pattern has since become standard across much of the travel industry.  
+  [CNN](https://edition.cnn.com/travel/article/thanksgiving-2018-flights/index.html) · [video](https://www.youtube.com/watch?v=ezzeGw0mmCI)
+
 - **Gmail Add-ons (2016)** · A cross-platform framework that lets third-party apps live natively inside Gmail. We focused on developer simplicity and making a consistent "native" user experience across iOS, Android, and the web.  
   [blog](https://workspace.google.com/blog/developers-practitioners/bring-power-of-your-apps-into-gmail_9) · [video](https://www.youtube.com/watch?v=eaEBo95M3nc)
 
@@ -21,9 +24,6 @@ Below are some of my favorite things I've built over the years, professionally a
 - **Gmail Attachments (2013)** · The attachment experience still used in Gmail today. To make it feel truly instant, we focused on getting the viewer to load in under 150ms while deeply integrating Google Drive and Photos.  
   [Drive](https://blog.google/products-and-platforms/products/gmail/attachments-in-gmail-now-with-power-of/) · [Photos](https://gmail.googleblog.com/2014/04/the-photos-from-your-phone-now-one.html)
 
-- **Google Flights: Price Insights (2018)** · Introduced the ML-based "low/typical/high" pricing UI to help users answer a simple question: "Is this a reasonable price?". This pattern has since become standard across much of the travel industry.  
-  [CNN](https://edition.cnn.com/travel/article/thanksgiving-2018-flights/index.html) · [video](https://www.youtube.com/watch?v=ezzeGw0mmCI)
-
 ## FPGA
 
 Before moving into product, I spent a lot of time in the weeds of VHDL and reconfigurable hardware.
@@ -31,11 +31,11 @@ Before moving into product, I spent a lot of time in the weeds of VHDL and recon
 - **ρ-VEX (2008)** · An open source, extensible VLIW CPU. I designed and implemented the processor and its toolchain, including the ρ-ASM assembler, for my MSc thesis.  
   [repo](https://github.com/tvanas/r-vex) · [thesis](/files/thesis_tvanas.pdf) · [paper](/files/r-vex_icfpt08.pdf) · [citations](https://scholar.google.com/citations?user=S0ClwNcAAAAJ)
 
-- **arkanoid-vhdl (2007)** · A basic implementation of Arkanoid entirely in hardware, from the VGA signal generation to the collision physics.  
-  [repo](https://github.com/tvanas/arkanoid-vhdl) · [video](https://www.youtube.com/watch?v=ZQ3HaM9p60U)
-
 - **uart-vhdl (2008)** · A minimal RS232 communication controller. Couldn't live without this for debugging other projects.  
   [repo](https://github.com/tvanas/uart-vhdl)
+
+- **arkanoid-vhdl (2007)** · A basic implementation of Arkanoid entirely in hardware, from the VGA signal generation to the collision physics.  
+  [repo](https://github.com/tvanas/arkanoid-vhdl) · [video](https://www.youtube.com/watch?v=ZQ3HaM9p60U)
 
 - **MIDI synthesizer (2007)** · A simple monophonic MIDI synthesizer to experiment with digital audio synthesis.  
   [video](https://www.youtube.com/watch?v=G_rAKDF9VSY)

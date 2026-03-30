@@ -12,36 +12,45 @@
         <link rel="stylesheet" href="/css/main.css" />
         <link rel="canonical" href="{{ .Permalink }}">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-        <link rel="icon" href="/favicon.ico" sizes="any">
         <link rel="icon" href="/favicon.png" sizes="256x256" type="image/png">
+        <link rel="icon" href="/favicon.ico" sizes="any">
         {{ if .IsHome }}
         <script type="application/ld+json">
         {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Thijs van As",
-            "url": "https://tvanas.nl",
-            "worksFor": {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "url": "https://tvanas.nl/",
+              "name": "Thijs van As"
+            },
+            {
+              "@type": "Person",
+              "name": "Thijs van As",
+              "url": "https://tvanas.nl/",
+              "worksFor": {
                 "@type": "Organization",
                 "name": "Relay.app",
-                "url": "https://relay.app"
-            },
-            "sameAs": [
+                "url": "https://relay.app/"
+              },
+              "sameAs": [
                 "https://github.com/tvanas",
                 "https://www.linkedin.com/in/tvanas/",
                 "https://x.com/tvanas",
                 "https://bsky.app/profile/tvanas.nl"
-            ]
+              ]
+            }
+          ]
         }
         </script>
         {{ end }}
-      </head>
+    </head>
     <body>
         <div class="container">
             {{ block "main" . }}{{ end }}
             
             <footer class="site-footer">
-                &copy; 2005-<span id="current-year">{{ now.Year }}</span> · <a href="https://github.com/tvanas">GitHub</a> · <a href="https://www.linkedin.com/in/tvanas/">LinkedIn</a>
+                &copy; 2005-<span id="current-year">{{ now.Year }}</span> · <a href="https://www.linkedin.com/in/tvanas/">LinkedIn</a> · <a href="https://github.com/tvanas">GitHub</a> 
             </footer>
 
             <script>
