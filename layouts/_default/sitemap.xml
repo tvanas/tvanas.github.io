@@ -12,7 +12,7 @@
   {{- $games := slice "bounceit" "brickit" "floodit" "snakeit" "sweepit" }}
   {{- range $games }}
   <url>
-    <loc>{{ site.BaseURL }}{{ . }}/</loc>
+    <loc>{{ site.BaseURL }}{{ . }}</loc>
   </url>
   {{- end }}
   {{- $pdfs := slice "files/thesis_tvanas.pdf" "files/r-vex_icfpt08.pdf" }}

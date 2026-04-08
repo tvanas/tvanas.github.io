@@ -10,16 +10,16 @@ Thijs van As is a product builder currently working at Relay.app, making AI work
 
 ## Shipped products
 
+- Google Flights: Price Insights (2018): ML-based "low/typical/high" pricing UI — https://edition.cnn.com/travel/article/thanksgiving-2018-flights/index.html
 - Gmail Add-ons (2016): Cross-platform framework for third-party apps inside Gmail — https://workspace.google.com/blog/developers-practitioners/bring-power-of-your-apps-into-gmail_9
 - Inbox by Gmail: Smart Bundles (2015): Grouped related emails into Trip, Newsletter, and Event experiences — https://gmail.googleblog.com/2015/06/trip-bundles-in-inbox-by-gmail.html
 - Gmail Attachments (2013): The attachment and viewer experience still used in Gmail today — https://blog.google/products-and-platforms/products/gmail/attachments-in-gmail-now-with-power-of/
-- Google Flights: Price Insights (2018): ML-based "low/typical/high" pricing UI — https://edition.cnn.com/travel/article/thanksgiving-2018-flights/index.html
 
 ## FPGA projects
 
 - ρ-VEX (2008): Open source extensible VLIW processor, designed for MSc thesis — https://github.com/tvanas/r-vex · thesis: https://tvanas.nl/files/thesis_tvanas.pdf · paper: https://tvanas.nl/files/r-vex_icfpt08.pdf
-- arkanoid-vhdl (2007): Arkanoid implemented entirely in hardware (VHDL) — https://github.com/tvanas/arkanoid-vhdl
 - uart-vhdl (2008): Minimal RS232 communication controller — https://github.com/tvanas/uart-vhdl
+- arkanoid-vhdl (2007): Arkanoid implemented entirely in hardware (VHDL) — https://github.com/tvanas/arkanoid-vhdl
 - MIDI synthesizer (2007): Monophonic MIDI synthesizer for digital audio synthesis
 
 ## HTML5 games
