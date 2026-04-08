@@ -26,11 +26,11 @@ Thijs van As is a product builder currently working at Relay.app, making AI work
 
 Built around 2010 when the canvas element was new. All playable at:
 
-- BrickIt: https://tvanas.nl/brickit — Arkanoid-style brick breaker
-- BounceIt: https://tvanas.nl/bounceit — Endless vertical jumper
-- FloodIt: https://tvanas.nl/floodit — Color flood puzzle
-- SweepIt: https://tvanas.nl/sweepit — Minimalist Minesweeper
-- SnakeIt: https://tvanas.nl/snakeit — Nokia-style snake game
+- BrickIt: https://tvanas.nl/brickit/ — Arkanoid-style brick breaker
+- BounceIt: https://tvanas.nl/bounceit/ — Endless vertical jumper
+- FloodIt: https://tvanas.nl/floodit/ — Color flood puzzle
+- SweepIt: https://tvanas.nl/sweepit/ — Minimalist Minesweeper
+- SnakeIt: https://tvanas.nl/snakeit/ — Nokia-style snake game
 
 Source code: https://github.com/tvanas/html5-games
 
