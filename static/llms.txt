@@ -2,7 +2,7 @@
 
 > Personal website of Thijs van As — product builder, currently at Relay.app.
 
-This is the personal website of Thijs van As at https://tvanas.nl (previously hosted at pretopia.net).
+This is the personal website of Thijs van As at https://tvanas.nl/ (previously hosted at pretopia.net). The full homepage is also available in markdown at https://tvanas.nl/index.md
 
 ## About
 

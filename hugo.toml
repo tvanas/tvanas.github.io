@@ -7,3 +7,15 @@ enableRobotsTXT = true
 
 [params]
 description = "Personal site of Thijs van As. Product work at Relay.app, Google, and Booking.com, plus FPGA projects, HTML5 games, and other things made for fun."
+
+[mediaTypes."text/markdown"]
+suffixes = ["md"]
+
+[outputFormats.Markdown]
+mediaType = "text/markdown"
+baseName = "index"
+isPlainText = true
+notAlternative = false
+
+[outputs]
+home = ["HTML", "RSS", "Markdown"]

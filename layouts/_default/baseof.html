@@ -11,6 +11,7 @@
         <meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}" />
         <link rel="stylesheet" href="/css/main.css" />
         <link rel="canonical" href="{{ .Permalink }}">
+        {{ if .IsHome }}<link rel="alternate" type="text/markdown" href="/index.md" title="Markdown version">{{ end }}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
         <link rel="icon" href="/favicon.png" sizes="256x256" type="image/png">
         <link rel="icon" href="/favicon.ico" sizes="any">
